@@ -2878,6 +2878,13 @@
         }
       }
     },
+    "generic": {
+      "background_colour_label": "Background colour",
+      "text_colour_label": "Text colour"
+    },
+    "text-block": {
+      "name": "Text block"
+    },
     "rich-text": {
       "name": "Rich text",
       "settings": {

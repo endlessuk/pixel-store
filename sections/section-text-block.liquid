@@ -1,0 +1,59 @@
+{{ 'section-text-block.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #text-block__wrapper-{{ section.id }} {
+    background: {{ section.settings.background_colour }};
+  }
+  #text-block__wrapper-{{ section.id }} .text-block__inner {
+    background: {{ section.settings.box_background_colour }};
+    color: {{ section.settings.text_colour }};
+  }
+{%- endstyle -%}
+
+<div id="text-block__wrapper-{{ section.id }}" class="text-block__wrapper page-width">
+  <div class="text-block__inner pixel-corners">
+    <div class="text-block__header">Header</div>
+    <div class="text-block__body">123</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.text-block.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colour settings"
+    },
+    {
+      "type": "color",
+      "id": "background_colour",
+      "default": "#F1F1F1",
+      "label": "t:sections.generic.background_colour_label"
+    },
+    {
+      "type": "color",
+      "id": "box_background_colour",
+      "default": "#FFFFFF",
+      "label": "t:sections.generic.background_colour_label"
+    },
+    {
+      "type": "color",
+      "id": "text_colour",
+      "default": "#000000",
+      "label": "t:sections.generic.text_colour_label"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:sections.text-block.name"
+    }
+  ]
+}
+{% endschema %}

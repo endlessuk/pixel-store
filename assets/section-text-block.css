@@ -1,0 +1,13 @@
+.text-block__wrapper {
+    padding-top: var(--mobile-gap);
+    padding-bottom: var(--mobile-gap);
+}
+
+.text-block__wrapper .text-block__inner {}
+
+@media screen and (min-width: 750px) {
+    .text-block__wrapper {
+        padding-top: var(--desktop-gap);
+        padding-bottom: var(--desktop-gap);
+    }
+}
